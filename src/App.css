@@ -1,0 +1,135 @@
+
+.alex-brush-regular {
+  font-family: "Alex Brush", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.parkinsans-all {
+  font-family: "Parkinsans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.blueColor{
+  background-color: #6D2BF2;
+}
+
+.d-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardOne:hover{
+  filter: drop-shadow(0 0 10px #4c55ffaa);
+}
+.cardTwo:hover{
+  filter: drop-shadow(0 0 10px #abff4caa);
+}
+
+.live {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(106, 218, 31);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: blink 0.4s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 2px green;
+  }
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 10px green;
+  }
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  background-color: #000; /* Prevents text overlap */
+  z-index: 1000;
+}
+
+.welcome{
+  height: 300px;
+}
+
+.blueSection{
+  height: 250px;
+  background-color: #6D2BF2;
+  color: white;
+}
+@media (max-width: 550px) {
+  .blueSection {
+    max-height: fit-content;
+    height: fit-content;
+  }
+}
+.blueSection2{
+  height: 250px;
+  background-color: #a188fd;
+  color: white;
+}
+.pointer{
+  cursor: pointer;
+}
+.width80{
+  width: 80%;
+}
+.liveCard{
+  background-color: #dad5ff;
+  color: #2a0d68;
+}
+.color2{
+  color: #261445;
+}
+.giffy{
+  position: absolute;
+  top: 50;
+  left: 30px;
+  mix-blend-mode: multiply;
+  object-fit: cover;
+}
+@media (max-width: 550px) {
+  .giffy {
+    top: 40px;  /* Change top position */
+    left: 0px; /* Change left position */
+  }
+}
+.giffy2{
+  position: absolute;
+  top: 50;
+  right: 30px;
+  mix-blend-mode: multiply;
+}
+
+.crd{
+  padding: 20px 20px ;
+  /* border: 1px solid rgba(1, 83, 130, 0.2); */
+  border-radius: 15px;
+  /* flex: 1 1 0%; */
+  min-width: 320px;
+  background-color: #dad5ff ;
+  color: #761bb3;}
+.crd:hover{
+  filter: drop-shadow(0 0 10px #608dd1aa);
+}
+.smText{
+  font-size: smaller;
+}
+.descrition{
+  height: 300px;
+}
+.font12{
+  font-size: 12px;
+}
+.font16{
+  font-size: 14px;
+}

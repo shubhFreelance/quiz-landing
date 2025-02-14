@@ -13,7 +13,8 @@ const Home = () => {
       {/* Welcome */}
       <div className="d-flex flex-column justify-content-center align-items-center welcome parkinsans-all position-relative">
         <img
-          src="./src/assets/cash-falling.gif"
+          // src="./src/assets/cash-falling.gif"
+          src="/cash-falling.gif"
           alt="a"
           className="giffy  img-fluid"
         />
@@ -24,7 +25,7 @@ const Home = () => {
           Live Satta Matka Fast Result!!
         </p>
         <img
-          src="./src/assets/cash-falling.gif"
+          src="/cash-falling.gif"
           alt="a"
           className="giffy2 d-none d-md-block"
         />

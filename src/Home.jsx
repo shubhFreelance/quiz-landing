@@ -1,4 +1,6 @@
 import React from "react";
+import Results from "./components/Results";
+import Table from "./components/Table";
 
 const Home = () => {
   return (
@@ -70,7 +72,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      <Results />
+      <Table />
       {/* Description */}
       <div className="d-center mt-5 flex-column  ">
         <h3 className="w-100 text-center py-3 blueColor text-white">

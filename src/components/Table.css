@@ -1,0 +1,129 @@
+.table-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  .table-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .table-wrapper {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+  }
+  
+  .loading-spinner {
+    font-size: 3rem;
+    color: #f59e0b;
+    padding: 2rem 0;
+    display: inline-block;
+  }
+  
+  .results-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: white;
+  }
+  
+  .header-row th {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .date-header {
+    background: rgba(30, 41, 59, 0.8);
+    border-top-left-radius: 12px;
+    border-bottom: 2px solid #f59e0b;
+  }
+  
+  .session-header {
+    background: rgba(30, 41, 59, 0.8);
+    border-top-right-radius: 12px;
+    border-bottom: 2px solid #f59e0b;
+  }
+  
+  .subheader-row th {
+    padding: 0.8rem;
+    font-weight: 600;
+    background: rgba(55, 65, 81, 0.6);
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+  }
+  
+  .data-row {
+    transition: all 0.2s ease;
+  }
+  
+  .data-row:nth-child(even) {
+    background: rgba(30, 41, 59, 0.3);
+  }
+  
+  .data-row:nth-child(odd) {
+    background: rgba(30, 41, 59, 0.5);
+  }
+  
+  .data-row:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+  }
+  
+  .data-row:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+  }
+  
+  .date-cell {
+    padding: 1rem;
+    font-weight: 600;
+    text-align: left;
+    border-right: 1px solid rgba(251, 191, 36, 0.2);
+  }
+  
+  .result-cell {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+  }
+  
+  .result-cell.joker {
+    color: #ef4444;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .table-wrapper {
+      padding: 0.5rem;
+    }
+    
+    .header-row th {
+      padding: 0.8rem 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .date-cell, .result-cell {
+      padding: 0.8rem 0.5rem;
+    }
+  }

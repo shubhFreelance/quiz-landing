@@ -1,0 +1,275 @@
+/* Base Styles */
+.home-container {
+    /* background: linear-gradient(135deg, #1e1b4b, #312e81); */
+    background: #fee6da;
+    color: rgb(26, 78, 156);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    /* max-width: 1400px; */
+  }
+  
+  /* Header Styles */
+  .app-header {
+    background: rgba(31, 31, 103, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-color: #e2e8f0;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+  }
+  
+  .main-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-left: -20px;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+  
+  .pulse-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    margin: 40px 0;
+  }
+  
+  .welcome-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .giffy {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  
+  .welcome-text {
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #f59e0b, #091266);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #a5b4fc;
+  }
+  
+  /* Section Styles */
+  .section-title, .section-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f59e0b;
+  }
+  
+  .info-section, .description-section, .disclaimer-section {
+    background: rgba(30, 27, 75, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+    border: 1px solid #4f46e5;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #c7d2fe;
+    margin: 15px 0;
+   text-align: center;
+  }
+  
+  /* Live Results Section */
+  .live-result-section {
+    background: rgba(30, 27, 75, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+    border: 1px solid #4f46e5;
+  }
+  
+  .live-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .live-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .live-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+  
+  .rounds-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .result-card {
+    background: linear-gradient(135deg, #4338ca, #4f46e5);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .result-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: #e2e8f0;
+  }
+  
+  .result-card p {
+    font-size: 1rem;
+    color: #a5b4fc;
+    margin: 0 0 15px;
+  }
+  
+  .result-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    color: #fbbf24;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Info Blocks */
+  .info-block {
+    background: rgba(55, 48, 163, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #f59e0b;
+  }
+  
+  .info-block h5 {
+    font-size: 1.3rem;
+    color: #f59e0b;
+    margin: 0 0 10px;
+  }
+  
+  /* Disclaimer Section */
+  .disclaimer-section {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+  }
+  
+  .disclaimer-text {
+    font-size: 1rem;
+    color: #fca5a5;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Footer */
+  .footer-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid #4f46e5;
+  }
+  
+  .powered-by {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a5b4fc;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    color: #818cf8;
+    margin: 0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 2rem;
+    }
+    
+    .welcome-title {
+      font-size: 1.4rem;
+    }
+    
+    .welcome-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .giffy {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .section-title, .section-heading {
+      font-size: 1.5rem;
+    }
+    
+    .info-section, .description-section, .disclaimer-section, .live-result-section {
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .result-card {
+      min-width: 150px;
+      padding: 15px;
+    }
+    
+    .result-number {
+      font-size: 2.5rem;
+    }
+  }

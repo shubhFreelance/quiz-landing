@@ -1,128 +1,238 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
+import { motion } from "framer-motion";
+import axios from "axios";
 import Results from "./components/Results";
 import Table from "./components/Table";
+import LotteryGame from "./components/LotteryGame";
+import "./Home.css";
 
 const Home = () => {
+
+  const [result, setResult] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("/api/result/today-result")
+      .then((res) => {
+        console.log(res.data)
+        setResult(res.data.results);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
+  }, []);
+  console.log(result)
+
   return (
-    <>
-      {/* Header */}
-      <div className="sticky-top">
-        <h1 className="d-flex justify-content-center align-items-center text-white alex-brush-regular p-3 sm:text-3xl md:text-5xl blueColor ">
-          Goa Winner
-        </h1>
-      </div>
+    <div className="home-container">
+      {/* Animated Header */}
+      <motion.header 
+        className="app-header"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <motion.h1 
+          className="main-heading"
+          initial={{ scale: 0.2 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          GOA KARD WINNER
+          <motion.span 
+            className="pulse-dot"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          />
+        </motion.h1>
+      </motion.header>
 
-      {/* Welcome */}
-      <div className="d-flex flex-column justify-content-center align-items-center welcome parkinsans-all position-relative">
-        <img
-          // src="./src/assets/cash-falling.gif"
-          src="/cash-falling.gif"
-          alt="a"
-          className="giffy  img-fluid"
-        />
-        <p className=" m-0 fs-1 fw-bold text-center">
-          Welcome to Goa Winner international!!
-        </p>
-        <p className="m-0 fs-1 fw-bold text-center">
-          Live Satta Matka Fast Result!!
-        </p>
-        <img
-          src="/cash-falling.gif"
-          alt="a"
-          className="giffy2 d-none d-md-block"
-        />
-      </div>
+      {/* Welcome Section */}
+      <motion.section 
+        className="welcome-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="welcome-content">
+          <motion.img 
+            src="/cash-falling.gif" 
+            alt="Falling cash animation" 
+            className="giffy"
+            whileHover={{ scale: 1.05 }}
+          />
+          <div className="welcome-text">
+            <motion.p 
+              className="welcome-title"
+              initial={{ x: -20 }}
+              animate={{ x: 0 }}
+            >
+              Welcome to Goa Winner International!!
+            </motion.p>
+            <motion.p 
+              className="welcome-subtitle"
+              initial={{ x: 20 }}
+              animate={{ x: 0 }}
+            >
+              Live Satta Matka Fast Result!!
+            </motion.p>
+          </div>
+          <motion.img 
+            src="/cash-falling.gif" 
+            alt="Falling cash animation" 
+            className="giffy"
+            whileHover={{ scale: 1.05 }}
+          />
+        </div>
+      </motion.section>
 
-      {/* section */}
-      <div className=" d-center text-center flex-column blueSection">
-        <h3 className="mt-md-0 mt-4">Satta Matka Goa Winner Result</h3>
-        <p className=" w-75 mt-2 font16">
-          Goa Winner is the No. 1 Matka Sites welcomes you full-heartedly. Here
-          below you can find the perfect guess by the top guesser along with the
-          Fast Matka Result too. Aaj Ka Satta Kalyan Fix Single Jodi free update
-          here you find top Matka Market of India Kalyan Main Milan Rajdhani*
-          *kalyan Matka Tips *fast Matka Result *kalyan Main Rajdhani Matka
-          Chart *Matka Guessing by GOA WINNER By App Best Matka Site By Goa
-          Winner
-        </p>
-      </div>
+      {/* Info Section */}
+      <motion.section 
+        className="info-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <h3 className="section-title">Satta Matka Goa Kard Winner Result</h3>
+        <motion.p 
+          className="info-paragraph"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          Goa Winner is the No. 1 Matka Sites welcomes you full-heartedly...
+        </motion.p>
+      </motion.section>
 
-      {/* Live result */}
-      <div className="d-center flex-column mt-4">
-        <div className="d-flex justify-content-center align-items-center ">
-          <span className="live"></span>
-          <h3 className="m-0">Live Result</h3>
+      <LotteryGame />
+
+      {/* Live Result Section */}
+      <motion.section 
+        className="live-result-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+      >
+        <div className="live-title-wrapper">
+          <motion.span 
+            className="live-dot"
+            animate={{ 
+              scale: [1, 1.2, 1],
+              boxShadow: ["0 0 0 0 rgba(74, 222, 128, 0.7)", "0 0 0 10px rgba(74, 222, 128, 0)", "0 0 0 0 rgba(74, 222, 128, 0)"]
+            }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          />
+          <h3 className="live-title">Live Result</h3>
         </div>
 
-        <div className="d-flex flex-column justify-content-evenly align-items-center w-100  mt-4 flex-lg-row gap-2 gap-lg-0">
-          <div className="crd  d-center flex-column pointer">
-            <h3>Kalyan</h3>
-            <h3 className="">9am -12am</h3>
-            <h2 className="fw-semibold color2">2</h2>
-          </div>
-          <div className="crd d-center flex-column pointer">
-            <h3>Kalyan</h3>
-            <h3 className="">12pm - 3pm</h3>
-            <h2 className="fw-semibold color2">4</h2>
-          </div>
-          <div className="crd d-center flex-column pointer">
-            <h3>Kalyan</h3>
-            <h3 className="">3pm -6p m</h3>
-            <h2 className="fw-semibold color2">7</h2>
-          </div>
-        </div>
-      </div>
+        <motion.div 
+          className="rounds-container"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { 
+              opacity: 1,
+              transition: { staggerChildren: 0.1 }
+            }
+          }}
+        >
+          {result.map((item, index) => (
+            <motion.div
+              key={index}
+              className="result-card"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              whileHover={{ y: -5 }}
+            >
+              <h3>Round {item.sessionNumber}</h3>
+              {/* <p>{item.time}</p> */}
+              <motion.h2 
+                className="result-number"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", bounce: 0.5 }}
+              >
+                {item.result}
+              </motion.h2>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
+
       <Results />
       <Table />
-      {/* Description */}
-      <div className="d-center mt-5 flex-column  ">
-        <h3 className="w-100 text-center py-3 blueColor text-white">
-          Introduction to Goa Winner Services
-        </h3>
-        <h5 className="mt-2">WHAT IS SATTA MATKA?</h5>
-        <p className="text-center font16 w-75">
-          Satta Matka originated in India and is one of the popular forms of
-          Lottery and gambling games. The game involves placing bets on
-          different numbers and earning potential winning on the outcome.
-        </p>
-        <h5>HOW DOES MATKA WORK?</h5>
-        <p className="text-center font16 w-75">
-          In Matka, players need to choose a specific set of numbers from any
-          predefined range and place bets on these numbers so that while any
-          random number drawn if the number is the same the player chooses, they
-          win.
-        </p>
-      </div>
 
-      {/* Disclaimer */}
-      <div className="d-center flex-column pt-2 mt-3 ">
-        <h4 className=" w-100 text-center py-3 blueColor text-white">
-          Disclaimer
-        </h4>
-        <p className="w-75 text-center mt-2 font12">
-          Visiting this site and browsing it is strictly recommended at your own
-          risk. Every information available here is only according to
-          informational purpose and based on astrology and number calculations.
-          We are no associated or affiliated with any illegal Matka business. We
-          make sure we follow all rules and regulations of the regions where you
-          are accessing the website. There are also chances that the website may
-          be banned in your area and after that if you are using it, you are
-          solely dependable and responsible for any damage, loss or legal action
-          taken. If you are the one who does not like our disclaimer it is
-          advised that you leave our website immediately. Copying of any
-          information/contents posted on the website is strictly prohibited and
-          against the law
-        </p>
-      </div>
+      {/* Description Section */}
+      <motion.section 
+        className="description-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7 }}
+      >
+        <h3 className="section-heading">Introduction to Goa Winner Services</h3>
+        <motion.div 
+          className="info-block"
+          whileHover={{ x: 5 }}
+        >
+          <h5>WHAT IS SATTA MATKA?</h5>
+          <p className="info-paragraph">
+            Satta Matka originated in India and is one of the popular forms...
+          </p>
+        </motion.div>
+        <motion.div 
+          className="info-block"
+          whileHover={{ x: 5 }}
+        >
+          <h5>HOW DOES MATKA WORK?</h5>
+          <p className="info-paragraph">
+            In Matka, players need to choose a specific set of numbers...
+          </p>
+        </motion.div>
+      </motion.section>
+
+      {/* Disclaimer Section */}
+      <motion.section 
+        className="disclaimer-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+      >
+        <h4 className="section-heading">Disclaimer</h4>
+        <motion.p 
+          className="disclaimer-text"
+          whileHover={{ backgroundColor: "rgba(239, 68, 68, 0.1)" }}
+        >
+          Visiting this site and browsing it is strictly recommended at your own risk...
+        </motion.p>
+      </motion.section>
 
       {/* Footer */}
-      <div className="d-center blueColor pt-2 mt-3 text-white">
-        <h4>Powered By Goa Winner</h4>
-      </div>
-      <div className="d-center m-0">
-        <p className="m-0 font12">ⓒ2025 Goa Winner</p>
-      </div>
-    </>
+      <motion.footer 
+        className="footer-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9 }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="powered-by"
+        >
+          Powered By Goa Winner
+        </motion.div>
+        <motion.p 
+          className="copyright"
+          whileHover={{ color: "#f59e0b" }}
+        >
+          ⓒ2025 Goa Winner
+        </motion.p>
+      </motion.footer>
+    </div>
   );
 };
 

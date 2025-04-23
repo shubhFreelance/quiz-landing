@@ -4,7 +4,7 @@ import Home from "./Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  axios.defaults.baseURL = "http://api.goawinner.fun";
+  axios.defaults.baseURL = "https://api.goawinner.fun";
 
   return (
     <>

@@ -379,12 +379,12 @@ const LotteryGame = () => {
                 className="place-bet-button"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                // onClick={simulateDraw}
+                onClick={simulateDraw}
                 disabled={!selectedSymbol || isDrawing}
               >
-                {/* <span className="button-text">
+                <span className="button-text">
                   {isDrawing ? 'Drawing...' : selectedSymbol ? 'Place Bet' : 'Select a Symbol'}
-                </span> */}
+                </span>
                 <motion.div
                   className="button-overlay"
                   initial={{ x: '-100%' }}

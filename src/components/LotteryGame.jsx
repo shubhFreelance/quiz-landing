@@ -11,9 +11,9 @@ const LotteryGame = () => {
   const [isDrawing, setIsDrawing] = useState(false);
 
   const sessions = [
-    { id: 1, name: 'Morning Draw', startTime: 9, endTime: 12, theme: 'morning-theme' },
-    { id: 2, name: 'Afternoon Draw', startTime: 13, endTime: 16, theme: 'afternoon-theme' },
-    { id: 3, name: 'Evening Draw', startTime: 18, endTime: 21, theme: 'evening-theme' }
+    { id: 1, name: 'Sridevi', startTime: 9, endTime: 11, theme: 'morning-theme' },
+    { id: 2, name: 'Kalyan', startTime: 12, endTime: 14, theme: 'afternoon-theme' },
+    { id: 3, name: 'Time Bazaar', startTime: 15, endTime: 17, theme: 'evening-theme' }
   ];
 
   const symbols = [
